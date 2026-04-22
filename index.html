@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111111" />
+  <meta name="description" content="D'Casa Eventos & Alquiler — Organización profesional de bodas, XV años, bautizos y eventos sociales en Puebla, Santa Ana Xalmimilulco y Zacatelco. Donde la elegancia se encuentra con la perfección." />
+  <meta name="keywords" content="eventos Puebla, alquiler mobiliario eventos, bodas Puebla, XV años Puebla, bautizos, quinceañeras, organizadora de eventos Puebla, Santa Ana Xalmimilulco, Zacatelco" />
+  <meta name="author" content="D'Casa Eventos & Alquiler" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="D'Casa Eventos & Alquiler" />
+  <meta property="og:description" content="Donde la elegancia se encuentra con la perfección. Organización integral de eventos sociales en Puebla." />
+  <meta property="og:image" content="assets/galeria-mesa-principal.jpg" />
+  <meta property="og:locale" content="es_MX" />
+
+  <title>D'Casa · Eventos & Alquiler · Puebla</title>
+
+  <!-- Favicon (uses logo) -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+  <link rel="apple-touch-icon" href="assets/logo.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =========================================================
+       RESET & TOKENS
+       ========================================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      /* Colors */
+      --ink: #111111;
+      --ink-soft: #2b2b2b;
+      --ivory: #f9f5ef;
+      --ivory-deep: #f1ebe2;
+      --cream: #ede3d3;
+      --gold: #b8935a;
+      --gold-soft: #d4b783;
+      --rose: #e8d5d0;
+      --rose-deep: #c9a39c;
+      --sage: #a8b5a0;
+      --line: rgba(17, 17, 17, 0.12);
+      --line-strong: rgba(17, 17, 17, 0.35);
+
+      /* Type */
+      --font-display: 'Italiana', 'Cormorant Garamond', serif;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Jost', system-ui, sans-serif;
+
+      /* Rhythm */
+      --radius: 2px;
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-gentle: cubic-bezier(0.65, 0, 0.35, 1);
+      --section-pad: clamp(5rem, 10vw, 9rem);
+      --gutter: clamp(1.25rem, 4vw, 3rem);
+
+      /* Max widths */
+      --w-wide: 1440px;
+      --w: 1200px;
+      --w-narrow: 820px;
+    }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html.no-scroll, html.no-scroll body { overflow: hidden; }
+
+    body {
+      font-family: var(--font-sans);
+      font-weight: 300;
+      color: var(--ink-soft);
+      background: var(--ivory);
+      line-height: 1.55;
+      font-size: clamp(0.95rem, 0.9vw + 0.8rem, 1.05rem);
+      letter-spacing: 0.01em;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    /* Subtle paper noise texture */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.35;
+      mix-blend-mode: multiply;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.06 0 0 0 0 0.05 0 0 0 0.06 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+    ::selection { background: var(--ink); color: var(--ivory); }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    /* =========================================================
+       TYPOGRAPHY UTILITIES
+       ========================================================= */
+    .display {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: 0.005em;
+      color: var(--ink);
+    }
+    .serif-it {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      letter-spacing: 0.01em;
+    }
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-weight: 500;
+      font-size: 0.72rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.9rem;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 2.2rem;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    /* =========================================================
+       CONTAINER & SECTION
+       ========================================================= */
+    .wrap { width: min(var(--w), 100% - var(--gutter) * 2); margin-inline: auto; }
+    .wrap--wide { width: min(var(--w-wide), 100% - var(--gutter) * 2); margin-inline: auto; }
+    .wrap--narrow { width: min(var(--w-narrow), 100% - var(--gutter) * 2); margin-inline: auto; }
+    section { padding-block: var(--section-pad); position: relative; }
+
+    /* =========================================================
+       PRELOADER
+       ========================================================= */
+    .preloader {
+      position: fixed;
+      inset: 0;
+      background: var(--ivory);
+      z-index: 200;
+      display: grid;
+      place-items: center;
+      transition: opacity 0.9s var(--ease) 0.4s, visibility 0s linear 1.3s;
+    }
+    .preloader.done { opacity: 0; visibility: hidden; }
+    .preloader__mark {
+      position: relative;
+      text-align: center;
+    }
+    .preloader__letters {
+      overflow: hidden;
+      line-height: 0;
+      padding-bottom: 0.5rem;
+    }
+    .preloader__letters img {
+      display: inline-block;
+      width: clamp(140px, 22vw, 220px);
+      height: auto;
+      transform: translateY(110%);
+      animation: rise 1.1s var(--ease) 0.2s forwards;
+    }
+    .preloader__line {
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      margin: 1.5rem auto 0;
+      animation: expand 0.8s var(--ease) 0.9s forwards;
+    }
+    @keyframes rise { to { transform: translateY(0); } }
+    @keyframes expand { to { width: 6rem; } }
+
+    /* =========================================================
+       NAV
+       ========================================================= */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 1.4rem clamp(1.25rem, 4vw, 3rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: transparent;
+      transition: background 0.5s var(--ease), padding 0.5s var(--ease), border-color 0.5s var(--ease);
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      background: rgba(249, 245, 239, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding-block: 1rem;
+      border-bottom-color: var(--line);
+    }
+    .nav__brand {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      color: var(--ink);
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+    }
+    .nav__brand small {
+      font-family: var(--font-sans);
+      font-weight: 400;
+      font-size: 0.6rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .nav__links {
+      display: flex;
+      gap: clamp(1rem, 2.2vw, 2.2rem);
+      align-items: center;
+      list-style: none;
+    }
+    .nav__links a {
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink);
+      position: relative;
+      padding: 0.3rem 0;
+      transition: opacity 0.3s var(--ease);
+    }
+    .nav__links a::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 100%;
+      bottom: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: right 0.5s var(--ease);
+    }
+    .nav__links a:hover::after { right: 0; }
+    .nav__cta {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 0.75rem 1.5rem;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      transition: background 0.4s var(--ease), color 0.4s var(--ease);
+    }
+    .nav__cta:hover { background: var(--ink); color: var(--ivory); }
+
+    /* Hamburger */
+    .nav__burger {
+      display: none;
+      width: 28px; height: 20px;
+      position: relative;
+      z-index: 110;
+    }
+    .nav__burger span {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      background: var(--ink);
+      transition: transform 0.4s var(--ease), top 0.3s var(--ease), opacity 0.2s;
+    }
+    .nav__burger span:nth-child(1) { top: 4px; }
+    .nav__burger span:nth-child(2) { top: 50%; margin-top: -0.75px; }
+    .nav__burger span:nth-child(3) { top: calc(100% - 5.5px); }
+    .nav__burger.open span:nth-child(1) { top: 50%; transform: rotate(45deg); }
+    .nav__burger.open span:nth-child(2) { opacity: 0; }
+    .nav__burger.open span:nth-child(3) { top: 50%; transform: rotate(-45deg); }
+
+    @media (max-width: 900px) {
+      .nav__cta { display: none; }
+      .nav__burger { display: block; }
+      .nav__links {
+        position: fixed;
+        inset: 0;
+        background: var(--ivory);
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.8rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s var(--ease), visibility 0s linear 0.5s;
+      }
+      .nav__links.open {
+        opacity: 1; visibility: visible;
+        transition: opacity 0.5s var(--ease);
+      }
+      .nav__links a { font-size: 1rem; }
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+    .hero {
+      min-height: 100vh;
+      min-height: 100svh;
+      display: grid;
+      align-items: center;
+      padding-top: 7rem;
+      padding-bottom: 4rem;
+      padding-inline: clamp(1.25rem, 4vw, 3rem);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(ellipse at 20% 10%, rgba(232, 213, 208, 0.45), transparent 60%),
+        radial-gradient(ellipse at 90% 90%, rgba(184, 147, 90, 0.12), transparent 55%),
+        var(--ivory);
+    }
+
+    .hero__inner {
+      width: min(var(--w-wide), 100%);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero__kicker {
+      display: block;
+      margin-bottom: 1.5rem;
+      animation: fadeUp 1s var(--ease) 0.8s both;
+    }
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(3.8rem, 13vw, 10.5rem);
+      line-height: 0.82;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 .line {
+      display: block;
+      overflow: hidden;
+    }
+    .hero h1 .line span {
+      display: block;
+      transform: translateY(110%);
+      animation: rise 1.1s var(--ease) forwards;
+    }
+    .hero h1 .line:nth-child(1) span { animation-delay: 1.0s; }
+    .hero h1 .line:nth-child(2) span { animation-delay: 1.15s; font-style: italic; font-family: var(--font-serif); font-weight: 300; }
+
+    .hero__sub {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.15rem, 1.6vw, 1.55rem);
+      line-height: 1.45;
+      color: var(--ink-soft);
+      max-width: 40ch;
+      margin-bottom: 2.5rem;
+      animation: fadeUp 1s var(--ease) 1.5s both;
+    }
+    .hero__sub strong { font-weight: 500; font-style: normal; color: var(--ink); }
+
+    .hero__cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      animation: fadeUp 1s var(--ease) 1.7s both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      padding: 1.05rem 1.8rem;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: var(--ivory);
+      transition: background 0.4s var(--ease), color 0.4s var(--ease), transform 0.3s var(--ease);
+    }
+    .btn:hover { transform: translateY(-2px); background: var(--gold); border-color: var(--gold); }
+    .btn--ghost { background: transparent; color: var(--ink); }
+    .btn--ghost:hover { background: var(--ink); color: var(--ivory); }
+    .btn svg { width: 14px; height: 14px; }
+
+    /* Hero visual side */
+    .hero__visual {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      opacity: 0;
+      animation: fadeIn 1.4s var(--ease) 1.3s forwards;
+    }
+    .hero__visual img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transform: scale(1.15);
+      animation: kenBurns 14s ease-in-out infinite alternate;
+    }
+    .hero__visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 55%, rgba(17, 17, 17, 0.25) 100%);
+    }
+    .hero__visual-frame {
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid rgba(249, 245, 239, 0.4);
+      pointer-events: none;
+      z-index: 3;
+    }
+    .hero__visual-tag {
+      position: absolute;
+      bottom: 1.8rem;
+      left: 2rem;
+      right: 2rem;
+      color: var(--ivory);
+      z-index: 4;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+    }
+    .hero__visual-tag::before {
+      content: '';
+      display: inline-block;
+      width: 1.5rem;
+      height: 1px;
+      background: var(--gold-soft);
+      vertical-align: middle;
+      margin-right: 0.8rem;
+    }
+
+    @keyframes kenBurns {
+      0% { transform: scale(1.15); }
+      100% { transform: scale(1.3) translate(-2%, -2%); }
+    }
+
+    /* Floating ornament */
+    .ornament {
+      position: absolute;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.55;
+    }
+    .ornament--hero-1 {
+      top: 12%;
+      right: 42%;
+      width: 180px;
+      animation: drift 14s ease-in-out infinite;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      50% { transform: translate(8px, -12px) rotate(4deg); }
+    }
+
+    /* Scroll cue */
+    .scroll-cue {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.7rem;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--ink);
+      opacity: 0;
+      animation: fadeIn 1s var(--ease) 2s forwards;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .scroll-cue::after {
+      content: '';
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(180deg, var(--ink), transparent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scaleY(1); opacity: 1; }
+      50% { transform: scaleY(0.4); opacity: 0.4; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 900px) {
+      .hero__inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .hero__visual { aspect-ratio: 3 / 4; max-height: 60vh; }
+      .ornament--hero-1 { display: none; }
+      .scroll-cue { display: none; }
+    }
+
+    /* =========================================================
+       REVEAL ANIMATION (Intersection Observer target)
+       ========================================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 1s var(--ease), transform 1s var(--ease);
+    }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    .reveal--delay-1 { transition-delay: 0.12s; }
+    .reveal--delay-2 { transition-delay: 0.24s; }
+    .reveal--delay-3 { transition-delay: 0.36s; }
+
+    /* =========================================================
+       SECTION HEADER
+       ========================================================= */
+    .section-head {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: clamp(3rem, 6vw, 5rem);
+      padding-bottom: 1.8rem;
+      border-bottom: 1px solid var(--line);
+    }
+    .section-head h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.5vw, 4.6rem);
+      color: var(--ink);
+      line-height: 1;
+      margin-top: 1rem;
+    }
+    .section-head h2 em {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-style: italic;
+    }
+    .section-head__meta {
+      font-family: var(--font-sans);
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+    @media (max-width: 700px) {
+      .section-head { grid-template-columns: 1fr; }
+      .section-head__meta { display: none; }
+    }
+
+    /* =========================================================
+       NOSOTROS
+       ========================================================= */
+    .nosotros__grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: center;
+    }
+    .nosotros__image {
+      position: relative;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+    }
+    .nosotros__image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.4s var(--ease-gentle);
+    }
+    .nosotros__image:hover img { transform: scale(1.04); }
+    .nosotros__image::before {
+      content: '';
+      position: absolute;
+      top: 1rem; left: -1rem;
+      width: 100%; height: 100%;
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+
+    .nosotros h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      color: var(--ink);
+      line-height: 1.02;
+      margin-bottom: 1.5rem;
+    }
+    .nosotros h2 em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .nosotros p { margin-bottom: 1.2rem; max-width: 55ch; }
+    .nosotros__signature {
+      margin-top: 2rem;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink);
+    }
+    .nosotros__signature small {
+      display: block;
+      font-family: var(--font-sans);
+      font-style: normal;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-top: 0.3rem;
+    }
+    @media (max-width: 900px) {
+      .nosotros__grid { grid-template-columns: 1fr; }
+    }
+
+    /* =========================================================
+       EVENTOS (event types)
+       ========================================================= */
+    .eventos { background: var(--ivory-deep); }
+    .eventos__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+    .evento {
+      position: relative;
+      padding: clamp(2.2rem, 4vw, 3rem) clamp(1.8rem, 3vw, 2.4rem);
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--ivory-deep);
+      transition: background 0.5s var(--ease);
+      overflow: hidden;
+    }
+    .evento:hover { background: var(--ivory); }
+    .evento__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: 0.95rem;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      margin-bottom: 1.5rem;
+    }
+    .evento h3 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 2.3vw, 2rem);
+      color: var(--ink);
+      line-height: 1.05;
+      margin-bottom: 0.8rem;
+      transition: transform 0.5s var(--ease);
+    }
+    .evento:hover h3 { transform: translateX(4px); }
+    .evento p {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+      line-height: 1.55;
+      max-width: 28ch;
+    }
+    .evento__icon {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      width: 38px;
+      height: 38px;
+      opacity: 0.25;
+      transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    }
+    .evento:hover .evento__icon { opacity: 0.8; transform: rotate(8deg); }
+
+    /* =========================================================
+       SERVICIOS (what we offer)
+       ========================================================= */
+    .servicios {
+      background: var(--ink);
+      color: var(--ivory);
+    }
+    .servicios .section-head { border-bottom-color: rgba(249, 245, 239, 0.15); }
+    .servicios .section-head h2 { color: var(--ivory); }
+    .servicios .section-head__meta { color: rgba(249, 245, 239, 0.6); }
+    .servicios .eyebrow { color: var(--gold-soft); }
+    .servicios .eyebrow::before { background: var(--gold-soft); }
+
+    .servicios__list {
+      list-style: none;
+      border-top: 1px solid rgba(249, 245, 239, 0.15);
+    }
+    .servicio {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: clamp(1rem, 4vw, 3rem);
+      align-items: baseline;
+      padding: clamp(1.5rem, 3vw, 2.2rem) 0;
+      border-bottom: 1px solid rgba(249, 245, 239, 0.15);
+      position: relative;
+      transition: padding 0.5s var(--ease);
+      cursor: default;
+    }
+    .servicio:hover { padding-inline: 1rem; }
+    .servicio::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.6s var(--ease);
+      z-index: 0;
+      opacity: 0.1;
+    }
+    .servicio:hover::before { transform: scaleX(1); }
+    .servicio > * { position: relative; z-index: 1; }
+    .servicio__num {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.85rem;
+      color: var(--gold-soft);
+      letter-spacing: 0.1em;
+    }
+    .servicio__name {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 3.5vw, 2.6rem);
+      color: var(--ivory);
+      line-height: 1;
+    }
+    .servicio__detail {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(249, 245, 239, 0.65);
+      text-align: right;
+      max-width: 32ch;
+    }
+    @media (max-width: 700px) {
+      .servicio { grid-template-columns: auto 1fr; }
+      .servicio__detail { grid-column: 1 / -1; text-align: left; padding-left: 2rem; }
+    }
+
+    /* =========================================================
+       GALERÍA
+       ========================================================= */
+    .galeria__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: clamp(0.5rem, 1vw, 1rem);
+    }
+    .galeria__item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      background: var(--ivory-deep);
+    }
+    .galeria__item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 1.4s var(--ease);
+    }
+    .galeria__item:hover img { transform: scale(1.06); }
+    .galeria__item::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(17, 17, 17, 0.6));
+      opacity: 0;
+      transition: opacity 0.5s var(--ease);
+    }
+    .galeria__item:hover::after { opacity: 1; }
+    .galeria__item-label {
+      position: absolute;
+      left: 1.3rem;
+      bottom: 1.3rem;
+      color: var(--ivory);
+      z-index: 2;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1rem;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+    }
+    .galeria__item:hover .galeria__item-label { opacity: 1; transform: translateY(0); }
+
+    /* Asymmetric layout */
+    .galeria__item:nth-child(1) { grid-column: span 7; aspect-ratio: 16 / 10; }
+    .galeria__item:nth-child(2) { grid-column: span 5; aspect-ratio: 4 / 5; }
+    .galeria__item:nth-child(3) { grid-column: span 5; aspect-ratio: 1 / 1; }
+    .galeria__item:nth-child(4) { grid-column: span 7; aspect-ratio: 16 / 11; }
+
+    @media (max-width: 700px) {
+      .galeria__grid { grid-template-columns: 1fr; }
+      .galeria__item { grid-column: span 1 !important; aspect-ratio: 4 / 3 !important; }
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      background: rgba(17, 17, 17, 0.95);
+      z-index: 150;
+      display: grid;
+      place-items: center;
+      padding: 2rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s var(--ease), visibility 0s linear 0.5s;
+    }
+    .lightbox.open { opacity: 1; visibility: visible; transition: opacity 0.5s var(--ease); }
+    .lightbox img {
+      max-width: min(92vw, 1200px);
+      max-height: 88vh;
+      object-fit: contain;
+    }
+    .lightbox__close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      color: var(--ivory);
+      font-size: 0.8rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      border: 1px solid rgba(249, 245, 239, 0.4);
+      padding: 0.6rem 1.1rem;
+      transition: background 0.4s var(--ease), color 0.4s var(--ease);
+    }
+    .lightbox__close:hover { background: var(--ivory); color: var(--ink); }
+
+    /* =========================================================
+       PROCESO
+       ========================================================= */
+    .proceso { background: var(--ivory-deep); }
+    .proceso__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: clamp(1.5rem, 3vw, 3rem);
+      position: relative;
+    }
+    .proceso__grid::before {
+      content: '';
+      position: absolute;
+      top: 2.2rem;
+      left: 8%;
+      right: 8%;
+      height: 1px;
+      background: var(--line);
+      z-index: 0;
+    }
+    .paso {
+      text-align: center;
+      position: relative;
+      z-index: 1;
+    }
+    .paso__num {
+      width: 4.4rem;
+      height: 4.4rem;
+      margin: 0 auto 1.5rem;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.3rem;
+      color: var(--gold);
+      background: var(--ivory-deep);
+    }
+    .paso h3 {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: var(--ink);
+      margin-bottom: 0.6rem;
+    }
+    .paso p {
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+      max-width: 22ch;
+      margin-inline: auto;
+    }
+    @media (max-width: 800px) {
+      .proceso__grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem; }
+      .proceso__grid::before { display: none; }
+    }
+
+    /* =========================================================
+       TESTIMONIOS
+       ========================================================= */
+    .testimonios {
+      background:
+        radial-gradient(ellipse at top right, rgba(232, 213, 208, 0.3), transparent 50%),
+        var(--ivory);
+      text-align: center;
+    }
+    .testimonio {
+      max-width: 52ch;
+      margin-inline: auto;
+    }
+    .testimonio__mark {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 4rem;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .testimonio__quote {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+      line-height: 1.45;
+      color: var(--ink);
+      margin-bottom: 2rem;
+    }
+    .testimonio__author {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+    .testimonio__author strong {
+      display: block;
+      color: var(--ink);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .testimonios__dots {
+      display: flex;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 3rem;
+    }
+    .testimonios__dots button {
+      width: 28px;
+      height: 2px;
+      background: var(--line-strong);
+      transition: background 0.4s var(--ease), width 0.4s var(--ease);
+    }
+    .testimonios__dots button.active {
+      background: var(--ink);
+      width: 44px;
+    }
+
+    /* =========================================================
+       COBERTURA
+       ========================================================= */
+    .cobertura {
+      background: var(--ink);
+      color: var(--ivory);
+      text-align: center;
+    }
+    .cobertura .eyebrow { color: var(--gold-soft); }
+    .cobertura .eyebrow::before { background: var(--gold-soft); }
+    .cobertura h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      color: var(--ivory);
+      margin: 1.2rem 0 3rem;
+      line-height: 1.05;
+    }
+    .cobertura h2 em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold-soft);
+    }
+    .cobertura__cities {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: clamp(1rem, 4vw, 3.5rem);
+      flex-wrap: wrap;
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      color: var(--ivory);
+    }
+    .cobertura__cities span { color: var(--gold); font-family: var(--font-serif); font-style: italic; font-size: 0.7em; font-weight: 300; }
+    .cobertura__cities strong { font-weight: 400; position: relative; }
+    .cobertura__cities strong::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.6s var(--ease);
+    }
+    .cobertura__cities strong:hover::after { transform: scaleX(1); }
+
+    /* =========================================================
+       CONTACTO
+       ========================================================= */
+    .contacto {
+      background:
+        linear-gradient(to bottom, var(--ivory-deep), var(--ivory));
+    }
+    .contacto__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 5vw, 5rem);
+      align-items: start;
+    }
+    .contacto__copy h2 {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 6vw, 5rem);
+      color: var(--ink);
+      line-height: 1;
+      margin: 1.5rem 0 1.8rem;
+    }
+    .contacto__copy h2 em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .contacto__copy p {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-size: 1.15rem;
+      color: var(--ink-soft);
+      max-width: 42ch;
+      margin-bottom: 2rem;
+    }
+
+    .contacto__card {
+      background: var(--ivory);
+      border: 1px solid var(--line);
+      padding: clamp(2rem, 3.5vw, 3rem);
+      position: relative;
+    }
+    .contacto__card::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: -1px; right: -1px;
+      height: 2px;
+      background: var(--gold);
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 1.3rem 1fr;
+      gap: 1.2rem;
+      padding-block: 1.1rem;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+    .contact-row:last-child { border-bottom: none; }
+    .contact-row__icon {
+      width: 1.3rem; height: 1.3rem;
+      color: var(--gold);
+      margin-top: 0.15rem;
+    }
+    .contact-row__label {
+      display: block;
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.4rem;
+    }
+    .contact-row__value {
+      font-family: var(--font-serif);
+      font-size: 1.1rem;
+      color: var(--ink);
+      line-height: 1.4;
+    }
+    .contact-row__value a { transition: color 0.3s var(--ease); }
+    .contact-row__value a:hover { color: var(--gold); }
+
+    .contacto__whatsapp {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+    .btn--wa {
+      background: #25D366;
+      border-color: #25D366;
+      color: #fff;
+      flex: 1;
+      justify-content: center;
+      min-width: 200px;
+    }
+    .btn--wa:hover { background: #1DA851; border-color: #1DA851; }
+
+    @media (max-width: 900px) {
+      .contacto__grid { grid-template-columns: 1fr; }
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    footer {
+      background: var(--ink);
+      color: var(--ivory);
+      padding: 4rem var(--gutter) 2rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+    footer .display {
+      color: var(--ivory);
+      font-size: clamp(3rem, 8vw, 5rem);
+      margin-bottom: 1rem;
+    }
+    footer .serif-it {
+      color: var(--gold-soft);
+      font-size: 1rem;
+      margin-bottom: 2rem;
+      display: block;
+    }
+    .footer__divider {
+      width: 3rem;
+      height: 1px;
+      background: var(--gold);
+      margin: 2rem auto;
+    }
+    .footer__social {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    .footer__social a {
+      width: 42px; height: 42px;
+      border: 1px solid rgba(249, 245, 239, 0.3);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      transition: background 0.4s var(--ease), border-color 0.4s var(--ease);
+    }
+    .footer__social a:hover { background: var(--gold); border-color: var(--gold); }
+    .footer__social svg { width: 16px; height: 16px; }
+    .footer__meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: rgba(249, 245, 239, 0.5);
+      line-height: 1.8;
+    }
+    .footer__meta a { color: var(--gold-soft); }
+
+    /* =========================================================
+       FLOATING WA BUTTON
+       ========================================================= */
+    .fab-wa {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 58px;
+      height: 58px;
+      background: #25D366;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
+      z-index: 90;
+      transition: transform 0.4s var(--ease);
+      animation: pulseWA 2.8s ease-in-out infinite;
+    }
+    .fab-wa:hover { transform: scale(1.08); }
+    .fab-wa svg { width: 28px; height: 28px; color: #fff; }
+    @keyframes pulseWA {
+      0%, 100% { box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4); }
+      50% { box-shadow: 0 8px 38px rgba(37, 211, 102, 0.7), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+    }
+
+    /* =========================================================
+       PRINT / SMALL POLISH
+       ========================================================= */
+    @media (max-width: 480px) {
+      :root { --section-pad: 4.5rem; }
+      .nav__brand small { display: none; }
+      .section-head h2 { font-size: 2.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__mark">
+      <div class="preloader__letters">
+        <img src="assets/logo.jpg" alt="D'Casa Eventos & Alquiler" />
+      </div>
+      <div class="preloader__line"></div>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <a href="#inicio" class="nav__brand">
+      D'Casa <small>Eventos & Alquiler</small>
+    </a>
+    <ul class="nav__links" id="navLinks">
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#eventos">Eventos</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a href="#contacto" class="nav__cta">Cotizar</a>
+    <button class="nav__burger" id="burger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <!-- Decorative ornament -->
+    <svg class="ornament ornament--hero-1" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="100" cy="100" r="60" stroke="#b8935a" stroke-width="0.6" stroke-dasharray="2 4" opacity="0.5"/>
+      <circle cx="100" cy="100" r="90" stroke="#b8935a" stroke-width="0.4" opacity="0.3"/>
+      <path d="M100 40 L105 95 L160 100 L105 105 L100 160 L95 105 L40 100 L95 95 Z" fill="#b8935a" opacity="0.2"/>
+    </svg>
+
+    <div class="hero__inner">
+      <div class="hero__text">
+        <span class="hero__kicker eyebrow">Organización de eventos · Puebla</span>
+        <h1>
+          <span class="line"><span>D'Casa</span></span>
+          <span class="line"><span>Eventos</span></span>
+        </h1>
+        <p class="hero__sub">
+          Donde la <strong>elegancia</strong> se encuentra con la
+          <strong>perfección</strong>. Vive la mejor experiencia en
+          la organización de tus eventos.
+        </p>
+        <div class="hero__cta-row">
+          <a href="https://wa.me/522271012702?text=Hola%20D'Casa%2C%20me%20interesa%20cotizar%20un%20evento." target="_blank" rel="noopener" class="btn">
+            Solicitar cotización
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8h10m0 0L9 4m4 4l-4 4"/></svg>
+          </a>
+          <a href="#galeria" class="btn btn--ghost">Ver galería</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="hero__visual-frame"></div>
+        <img src="assets/galeria-mesa-principal.jpg" alt="Mesa principal decorada por D'Casa con arreglos florales en tonos lavanda" loading="eager" />
+        <div class="hero__visual-tag">Mesa principal · XV años</div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">Desliza</div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros">
+    <div class="wrap nosotros">
+      <div class="nosotros__grid">
+        <div class="nosotros__image reveal">
+          <img src="assets/galeria-iglesia.jpg" alt="Decoración nupcial de iglesia en tonos pastel realizada por D'Casa" loading="lazy" />
+        </div>
+        <div class="reveal reveal--delay-1">
+          <span class="eyebrow">Nuestra historia</span>
+          <h2>Cada evento, un <em>recuerdo&nbsp;inolvidable.</em></h2>
+          <p>
+            En D'Casa transformamos celebraciones en experiencias. Desde hace años,
+            acompañamos a familias de Puebla y sus alrededores en los momentos más
+            importantes de su vida: bodas, XV años, bautizos, cumpleaños y reuniones
+            corporativas.
+          </p>
+          <p>
+            Lo que nos distingue no es solo el mobiliario, la decoración o el servicio
+            de meseros profesionales. Es la atención al detalle, la coordinación
+            impecable y el cuidado con el que tratamos cada evento como si fuera propio.
+          </p>
+          <div class="nosotros__signature">
+            Silvia Carreón Miranda
+            <small>Organizadora de eventos</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTOS -->
+  <section class="eventos" id="eventos">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div>
+          <span class="eyebrow">Lo que celebramos</span>
+          <h2>Eventos que <em>merecen</em><br/>ser recordados.</h2>
+        </div>
+        <div class="section-head__meta">01 — Tipos de evento</div>
+      </header>
+
+      <div class="eventos__grid reveal reveal--delay-1">
+        <article class="evento">
+          <div class="evento__num">— 01</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <path d="M20 8l2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8z"/>
+            <path d="M20 25v8M15 33h10"/>
+          </svg>
+          <h3>Bodas</h3>
+          <p>Ceremonias y recepciones con decoración personalizada, mobiliario de gala y coordinación integral del día más importante.</p>
+        </article>
+        <article class="evento">
+          <div class="evento__num">— 02</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <path d="M20 6l3 9h9l-7 5.5L27.5 30 20 24.5 12.5 30l2.5-9.5L8 15h9z"/>
+          </svg>
+          <h3>XV Años</h3>
+          <p>Quinceañeras temáticas con centros de mesa artesanales, letras gigantes iluminadas y ambientación completa.</p>
+        </article>
+        <article class="evento">
+          <div class="evento__num">— 03</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <circle cx="20" cy="20" r="8"/>
+            <path d="M20 4v4M20 32v4M36 20h-4M8 20H4M31.3 8.7l-2.8 2.8M11.5 28.5l-2.8 2.8M31.3 31.3l-2.8-2.8M11.5 11.5l-2.8-2.8"/>
+          </svg>
+          <h3>Bautizos</h3>
+          <p>Decoración de iglesia y salón, aros de bienvenida personalizados y ambientación delicada para la celebración familiar.</p>
+        </article>
+        <article class="evento">
+          <div class="evento__num">— 04</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <rect x="8" y="14" width="24" height="20" rx="1"/>
+            <path d="M12 14V10a3 3 0 013-3h10a3 3 0 013 3v4M14 22h12M14 28h8"/>
+          </svg>
+          <h3>Cumpleaños</h3>
+          <p>Fiestas memorables para todas las edades: desde cumpleaños infantiles con inflables temáticos hasta celebraciones de adultos.</p>
+        </article>
+        <article class="evento">
+          <div class="evento__num">— 05</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <path d="M10 10h20v20H10z"/>
+            <path d="M10 18h20M18 10v20"/>
+          </svg>
+          <h3>Corporativos</h3>
+          <p>Cenas, lanzamientos, posadas y conferencias con mobiliario, mesería profesional y ambientación acorde a tu marca.</p>
+        </article>
+        <article class="evento">
+          <div class="evento__num">— 06</div>
+          <svg class="evento__icon" viewBox="0 0 40 40" fill="none" stroke="#b8935a" stroke-width="1" aria-hidden="true">
+            <path d="M20 34c-8 0-14-6-14-14 0-4 2-8 6-10l8 6 8-6c4 2 6 6 6 10 0 8-6 14-14 14z"/>
+          </svg>
+          <h3>Baby Shower</h3>
+          <p>Celebraciones llenas de ternura con decoración temática, centros de mesa y detalles cuidados para recibir al bebé.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="servicios" id="servicios">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div>
+          <span class="eyebrow">Todo para tus eventos</span>
+          <h2>Alquiler &amp; <em>servicio integral.</em></h2>
+        </div>
+        <div class="section-head__meta">02 — Qué ofrecemos</div>
+      </header>
+
+      <ul class="servicios__list">
+        <li class="servicio reveal">
+          <span class="servicio__num">01</span>
+          <span class="servicio__name">Mobiliario</span>
+          <span class="servicio__detail">Mesas de gala, sillas, lonas de 10 × 15 m y mobiliario lounge.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">02</span>
+          <span class="servicio__name">Vajilla &amp; Cristalería</span>
+          <span class="servicio__detail">Vajilla de cristal, copas, jarras, cubiertos y blancos.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">03</span>
+          <span class="servicio__name">Decoración</span>
+          <span class="servicio__detail">Centros de mesa artesanales, arreglos florales y mesas temáticas.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">04</span>
+          <span class="servicio__name">Ambientación</span>
+          <span class="servicio__detail">Telones, drapeados, letras gigantes iluminadas y aros de bienvenida.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">05</span>
+          <span class="servicio__name">Mesería Profesional</span>
+          <span class="servicio__detail">Servicio de 8 horas con personal capacitado y uniformado.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">06</span>
+          <span class="servicio__name">Entretenimiento</span>
+          <span class="servicio__detail">Inflables temáticos de fantasía con higiene garantizada.</span>
+        </li>
+        <li class="servicio reveal">
+          <span class="servicio__num">07</span>
+          <span class="servicio__name">Coordinación Integral</span>
+          <span class="servicio__detail">Planeación, logística y supervisión del evento de principio a fin.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div>
+          <span class="eyebrow">Nuestros eventos</span>
+          <h2>Momentos <em>hechos a mano.</em></h2>
+        </div>
+        <div class="section-head__meta">03 — Galería</div>
+      </header>
+
+      <div class="galeria__grid reveal reveal--delay-1">
+        <figure class="galeria__item" data-src="assets/galeria-mesa-principal.jpg">
+          <img src="assets/galeria-mesa-principal.jpg" alt="Mesa principal con drapeado en tonos lavanda, silla dorada y arco floral" loading="lazy" />
+          <figcaption class="galeria__item-label">Mesa principal · XV años</figcaption>
+        </figure>
+        <figure class="galeria__item" data-src="assets/galeria-iglesia.jpg">
+          <img src="assets/galeria-iglesia.jpg" alt="Decoración de iglesia con arcos de tela y flores rosas y azules" loading="lazy" />
+          <figcaption class="galeria__item-label">Ceremonia religiosa</figcaption>
+        </figure>
+        <figure class="galeria__item" data-src="assets/galeria-xv-centros.jpg">
+          <img src="assets/galeria-xv-centros.jpg" alt="Seis variantes de centros de mesa florales en tonos lavanda y rosa para XV años" loading="lazy" />
+          <figcaption class="galeria__item-label">Centros de mesa</figcaption>
+        </figure>
+        <figure class="galeria__item" data-src="assets/galeria-bautizo.jpg">
+          <img src="assets/galeria-bautizo.jpg" alt="Propuesta de bautizo con mesa principal, letras iluminadas e inflables temáticos" loading="lazy" />
+          <figcaption class="galeria__item-label">Bautizo temático</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="proceso">
+    <div class="wrap">
+      <header class="section-head reveal">
+        <div>
+          <span class="eyebrow">Cómo trabajamos</span>
+          <h2>Un proceso <em>sin complicaciones.</em></h2>
+        </div>
+        <div class="section-head__meta">04 — Nuestro método</div>
+      </header>
+
+      <div class="proceso__grid">
+        <div class="paso reveal">
+          <div class="paso__num">i</div>
+          <h3>Consulta</h3>
+          <p>Conversamos sobre tu evento, fecha y visión general.</p>
+        </div>
+        <div class="paso reveal reveal--delay-1">
+          <div class="paso__num">ii</div>
+          <h3>Propuesta</h3>
+          <p>Diseñamos una cotización personalizada a tu presupuesto.</p>
+        </div>
+        <div class="paso reveal reveal--delay-2">
+          <div class="paso__num">iii</div>
+          <h3>Planeación</h3>
+          <p>Coordinamos proveedores, tiempos y cada detalle logístico.</p>
+        </div>
+        <div class="paso reveal reveal--delay-3">
+          <div class="paso__num">iv</div>
+          <h3>Tu gran día</h3>
+          <p>Supervisamos el evento de principio a fin. Tú solo disfruta.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="testimonios">
+    <div class="wrap--narrow">
+      <header class="section-head reveal" style="justify-items: center; text-align: center; grid-template-columns: 1fr;">
+        <div>
+          <span class="eyebrow" style="justify-content: center;">Lo que dicen nuestros clientes</span>
+        </div>
+      </header>
+
+      <div class="testimonio reveal reveal--delay-1" id="testimonioBox">
+        <div class="testimonio__mark">"</div>
+        <blockquote class="testimonio__quote" id="testimonioQuote">
+          Silvia y su equipo hicieron que los XV años de mi hija fueran mágicos. La decoración superó todas mis expectativas y el servicio de meseros fue impecable. Todo fluyó sin que tuviéramos que preocuparnos por nada.
+        </blockquote>
+        <div class="testimonio__author" id="testimonioAuthor">
+          <strong>Marisol H.</strong>
+          XV años · Puebla
+        </div>
+      </div>
+
+      <div class="testimonios__dots reveal reveal--delay-2" id="testimoniosDots">
+        <button class="active" data-i="0" aria-label="Testimonio 1"></button>
+        <button data-i="1" aria-label="Testimonio 2"></button>
+        <button data-i="2" aria-label="Testimonio 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURA -->
+  <section class="cobertura">
+    <div class="wrap">
+      <span class="eyebrow reveal" style="justify-content: center; display: flex;">Zona de cobertura</span>
+      <h2 class="reveal reveal--delay-1">Llevamos la fiesta <em>a donde estés.</em></h2>
+      <div class="cobertura__cities reveal reveal--delay-2">
+        <strong>Santa Ana Xalmimilulco</strong>
+        <span>·</span>
+        <strong>Puebla capital</strong>
+        <span>·</span>
+        <strong>Zacatelco</strong>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="contacto" id="contacto">
+    <div class="wrap">
+      <div class="contacto__grid">
+        <div class="reveal">
+          <span class="eyebrow">Hablemos de tu evento</span>
+          <h2>Cuéntanos qué <em>imaginas.</em></h2>
+          <p>
+            Cada celebración comienza con una conversación. Escríbenos por WhatsApp
+            y recibe una cotización personalizada sin compromiso.
+          </p>
+        </div>
+
+        <div class="contacto__card reveal reveal--delay-1">
+          <div class="contact-row">
+            <svg class="contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            <div>
+              <span class="contact-row__label">Teléfono &amp; WhatsApp</span>
+              <div class="contact-row__value">
+                <a href="tel:+522271012702">227 101 2702</a><br/>
+                <a href="tel:+522225270258">222 527 0258</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <svg class="contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+            <div>
+              <span class="contact-row__label">Horarios</span>
+              <div class="contact-row__value">Lunes a viernes<br/>8:00 &ndash; 17:00 h</div>
+            </div>
+          </div>
+
+          <div class="contact-row">
+            <svg class="contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <span class="contact-row__label">Cobertura</span>
+              <div class="contact-row__value">Santa Ana Xalmimilulco · Puebla capital · Zacatelco</div>
+            </div>
+          </div>
+
+          <div class="contacto__whatsapp">
+            <a href="https://wa.me/522271012702?text=Hola%20D'Casa%2C%20me%20interesa%20cotizar%20un%20evento." target="_blank" rel="noopener" class="btn btn--wa">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:18px;height:18px" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.78 14.03c-.24.68-1.41 1.3-1.96 1.38-.5.07-1.14.1-1.83-.12-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.83-4.2-4.97-4.39-.15-.19-1.19-1.58-1.19-3.02s.76-2.14 1.02-2.43c.27-.29.58-.36.78-.36l.55.01c.18 0 .41-.07.64.49.24.58.81 2.01.88 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.61 2 1.11.99 2.05 1.29 2.34 1.44.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.38-.24.64-.15.27.1 1.68.79 1.97.94.29.15.48.22.55.34.08.12.08.68-.15 1.36z"/></svg>
+              Chat por WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <div class="display">D'Casa</div>
+      <div class="serif-it">Eventos &amp; Alquiler</div>
+      <div class="footer__divider"></div>
+      <div class="footer__social">
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/search/top?q=Alquiler%20D'Casa" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/522271012702" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.78 14.03c-.24.68-1.41 1.3-1.96 1.38-.5.07-1.14.1-1.83-.12-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.83-4.2-4.97-4.39-.15-.19-1.19-1.58-1.19-3.02s.76-2.14 1.02-2.43c.27-.29.58-.36.78-.36l.55.01c.18 0 .41-.07.64.49.24.58.81 2.01.88 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.61 2 1.11.99 2.05 1.29 2.34 1.44.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.38-.24.64-.15.27.1 1.68.79 1.97.94.29.15.48.22.55.34.08.12.08.68-.15 1.36z"/></svg>
+        </a>
+        <!-- Phone -->
+        <a href="tel:+522271012702" aria-label="Llamar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </a>
+      </div>
+      <div class="footer__meta">
+        <div>Organizadora: Silvia Carreón Miranda</div>
+        <div>Puebla · Tlaxcala · México</div>
+        <div style="margin-top: 1rem;">© <span id="year"></span> D'Casa Eventos &amp; Alquiler</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp button -->
+  <a href="https://wa.me/522271012702?text=Hola%20D'Casa%2C%20me%20interesa%20cotizar%20un%20evento." target="_blank" rel="noopener" class="fab-wa" aria-label="Chatea con nosotros por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.97L2 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2zm5.78 14.03c-.24.68-1.41 1.3-1.96 1.38-.5.07-1.14.1-1.83-.12-.42-.13-.96-.31-1.66-.61-2.92-1.26-4.83-4.2-4.97-4.39-.15-.19-1.19-1.58-1.19-3.02s.76-2.14 1.02-2.43c.27-.29.58-.36.78-.36l.55.01c.18 0 .41-.07.64.49.24.58.81 2.01.88 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.61.17.29.75 1.24 1.61 2 1.11.99 2.05 1.29 2.34 1.44.29.15.46.12.63-.07.17-.19.73-.85.93-1.14.19-.29.38-.24.64-.15.27.1 1.68.79 1.97.94.29.15.48.22.55.34.08.12.08.68-.15 1.36z"/></svg>
+  </a>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lightboxClose">Cerrar ×</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
+
+  <script>
+    // ===== Preloader =====
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').classList.add('done');
+      }, 1800);
+    });
+
+    // ===== Year =====
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ===== Nav scroll state =====
+    const nav = document.getElementById('nav');
+    const onScroll = () => {
+      if (window.scrollY > 40) nav.classList.add('scrolled');
+      else nav.classList.remove('scrolled');
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    // ===== Mobile menu =====
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      burger.classList.toggle('open', open);
+      document.documentElement.classList.toggle('no-scroll', open);
+    });
+    navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      burger.classList.remove('open');
+      document.documentElement.classList.remove('no-scroll');
+    }));
+
+    // ===== Scroll reveal =====
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ===== Lightbox =====
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    document.querySelectorAll('.galeria__item').forEach(item => {
+      item.addEventListener('click', () => {
+        lbImg.src = item.dataset.src;
+        lbImg.alt = item.querySelector('img').alt;
+        lb.classList.add('open');
+        document.documentElement.classList.add('no-scroll');
+      });
+    });
+    const closeLB = () => {
+      lb.classList.remove('open');
+      document.documentElement.classList.remove('no-scroll');
+    };
+    document.getElementById('lightboxClose').addEventListener('click', closeLB);
+    lb.addEventListener('click', (e) => { if (e.target === lb) closeLB(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLB(); });
+
+    // ===== Testimonios =====
+    const testimonios = [
+      {
+        quote: "Silvia y su equipo hicieron que los XV años de mi hija fueran mágicos. La decoración superó todas mis expectativas y el servicio de meseros fue impecable. Todo fluyó sin que tuviéramos que preocuparnos por nada.",
+        name: "Marisol H.",
+        event: "XV años · Puebla"
+      },
+      {
+        quote: "Contratamos a D'Casa para nuestra boda civil y religiosa. La decoración de la iglesia con los arcos de tela y flores fue hermosísima. Nuestros invitados siguen hablando de lo bonito que quedó todo.",
+        name: "Carlos y Andrea",
+        event: "Boda · Santa Ana Xalmimilulco"
+      },
+      {
+        quote: "Recomendamos muchísimo a D'Casa para cualquier evento familiar. Organizaron el bautizo de nuestra hija Maya y se nota la atención al detalle: las letras iluminadas, los inflables, los centros de mesa. Un servicio de verdad profesional.",
+        name: "Familia Ramírez",
+        event: "Bautizo · Zacatelco"
+      }
+    ];
+
+    const tQuote = document.getElementById('testimonioQuote');
+    const tAuthor = document.getElementById('testimonioAuthor');
+    const dots = document.querySelectorAll('#testimoniosDots button');
+    let tIndex = 0;
+    let tTimer = null;
+
+    const showTestimonio = (i) => {
+      const t = testimonios[i];
+      tQuote.style.opacity = 0;
+      tAuthor.style.opacity = 0;
+      setTimeout(() => {
+        tQuote.textContent = t.quote;
+        tAuthor.innerHTML = `<strong>${t.name}</strong>${t.event}`;
+        tQuote.style.transition = 'opacity 0.6s ease';
+        tAuthor.style.transition = 'opacity 0.6s ease';
+        tQuote.style.opacity = 1;
+        tAuthor.style.opacity = 1;
+      }, 350);
+      dots.forEach((d, idx) => d.classList.toggle('active', idx === i));
+      tIndex = i;
+    };
+
+    dots.forEach(d => d.addEventListener('click', () => {
+      clearInterval(tTimer);
+      showTestimonio(parseInt(d.dataset.i, 10));
+      tTimer = setInterval(() => showTestimonio((tIndex + 1) % testimonios.length), 7000);
+    }));
+    tTimer = setInterval(() => showTestimonio((tIndex + 1) % testimonios.length), 7000);
+
+    // ===== Smooth anchor offset for fixed nav =====
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', (e) => {
+        const id = a.getAttribute('href');
+        if (id.length > 1 && document.querySelector(id)) {
+          e.preventDefault();
+          document.querySelector(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+
+    // ===== Image load diagnostic (visible only if images fail) =====
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', () => {
+        img.style.cssText = 'background:#fee;border:2px dashed #c33;padding:1rem;color:#c33;font-family:monospace;font-size:11px;min-height:80px;display:flex;align-items:center;justify-content:center;text-align:center;';
+        img.alt = '⚠ No carga: ' + img.getAttribute('src');
+        console.error('[D\'Casa] Imagen no encontrada:', img.src);
+      });
+    });
+  </script>
+</body>
+</html>
